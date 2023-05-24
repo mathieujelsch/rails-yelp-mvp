@@ -1,0 +1,17 @@
+<h1>Restaurants#index</h1>
+<p>Find me in app/views/restaurants/index.html.erb</p>
+
+<div class="row">
+  <div class="col-7">
+    <%  @restaurants.each do |restaurant|%>
+    <%= link_to restaurant do %>
+    <h1> <%= restaurant.name %> </h1>
+    <% end %>
+    <p> <%= restaurant.category %> </p>
+    <p> <%= restaurant.address %> </p>
+    <p> <%= restaurant.phone_number %> </p>
+    <p><%= link_to "Give a review", new_restaurant_review_path(restaurant) %></p>
+    <% end %>
+    <button class="btn btn-dark"><%= link_to "Create a new Restaurant", new_restaurant_path %></button>
+  </div>
+</div>
